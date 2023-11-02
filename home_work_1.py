@@ -169,13 +169,5 @@
 # second_month = float(second_month)
 # third_month = float(third_month)
 # percentage = float(percentage)
-# integer_part = (first_month + second_month + third_month) * percentage // 100
-# fractional_part = (first_month + second_month + third_month) * percentage % 100
-# integer_part = str(integer_part)
-# fractional_part = str(fractional_part)
-# print ("Single tax is", integer_part, "hryvnias and,", fractional_part, "kopecks")
-# print("If you want to know amount of tax, including ESV, enter/repeat the value of the single tax")
-# single_tax = input()
-# single_tax  = float(single_tax )
-# amount_of_tax = single_tax + 4422
+# amount_of_tax = (first_month + second_month + third_month) * percentage / 100 + 4422
 # print(amount_of_tax, "UAH you need to pay taxes for 3 months")
