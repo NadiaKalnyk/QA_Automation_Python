@@ -65,5 +65,7 @@ if del_element >= 1 and del_element <= len(product_list):
 else:
     print(f"Wrong number. There is no product with {del_element} in the list {product_list}")
 print(f"You have already bought {basket}. There are {len(basket)} products in the basket")
+import copy
+product_list_2 = copy.deepcopy(product_list)
 add_product = input("Which product do you want to add to your purchase? ")
-print(f"Your purchase was updated: {product_list.append(add_product)}")
+print(f"Your purchase was updated: {product_list_2.append(add_product)}")
