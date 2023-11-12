@@ -12,21 +12,25 @@
 # Задача №2
 # Напишіть калькулятор, який запитує два числа якщо це множення, додавання, ділення, віднімання. Або одне число якщо це
 # зняття коріння або піднесення до степіня. Виводить на екран результат.
-# print("Enter '2' if you want to use operation: '*,+,-,/ '")
-# print("Enter '1' if you want to use operation: 'sqr','^'")
-# operation = input()
-# if operation == '1':
-#     number_1 = input("Enter number ")
-#     number_1 = float(number_1)
-#     print(f"Root of the number {number_1} is {round(number_1 ** 0.5, 2)}")
-#     print(f"{number_1}^2 = {round(number_1 ** 2, 2)}")
-#     print(f"{number_1}^3 = {round(number_1 ** 3, 2)}")
-# elif operation == '2':
-#     number_1 = float(input("Enter number1 = "))
-#     number_2 = float(input("Enter number2 = "))
-#     print(f"{number_1} * {number_2} = {number_1 * number_2}")
-#     print(f"{number_1} + {number_2} = {number_1 + number_2}")
-#     print(f"{number_1} / {number_2} = {round(number_1 / number_2, 2)}")
-#     print(f"{number_1} - {number_2} = {number_1 - number_2}")
-# else:
-#     print("Wrong number for operation. Please, enter '1' or '2'")
+print("What operation: '*,+,-,/,sqr,^' do ou want to use?")
+operation = input().lower()
+if operation == 'sqr' or operation== '^':
+    number_1 = input("Enter number = ")
+    number_1 = float(number_1)
+    if  operation == 'sqr':
+        print(f"Root of the number {number_1} is {round(number_1 ** 0.5, 2)}")
+    elif operation == '^':
+        print(f"{number_1}^2 = {round(number_1 ** 2, 2)}")
+elif operation == '*' or operation == '+' or operation == '/' or operation == '-':
+    number_1 = float(input("Enter number1 = "))
+    number_2 = float(input("Enter number2 = "))
+    if operation == '*':
+        print(f"{number_1} * {number_2} = {number_1 * number_2}")
+    elif operation == '+':
+        print(f"{number_1} + {number_2} = {number_1 + number_2}")
+    elif operation == '/':
+        print(f"{number_1} / {number_2} = {round(number_1 / number_2, 2)}")
+    elif operation == '-':
+        print(f"{number_1} - {number_2} = {number_1 - number_2}")
+else:
+    print("Wrong operation. Please select: '* , +, -, /, sqr, ^'")
