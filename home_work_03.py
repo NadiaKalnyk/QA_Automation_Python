@@ -68,4 +68,5 @@ print(f"You have already bought {basket}. There are {len(basket)} products in th
 import copy
 product_list_2 = copy.deepcopy(product_list)
 add_product = input("Which product do you want to add to your purchase? ")
-print(f"Your purchase was updated: {product_list_2.append(add_product)}")
+product_list_2.append(add_product)
+print(f"Your purchase was updated: {product_list_2}")
