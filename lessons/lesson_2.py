@@ -165,9 +165,9 @@
 # print(url)
 # url = url.replace("_qa", "")  # видалення
 # print(url)
-
-# password = input("please, type your name: ")
-# if password.title() == "Igor":
-#     print("welcome")
-# else:
-#     print("sorry, access deny")
+#
+# # password = input("please, type your name: ")
+# # if password.title() == "Igor":
+# #     print("welcome")
+# # else:
+# #     print("sorry, access deny")
