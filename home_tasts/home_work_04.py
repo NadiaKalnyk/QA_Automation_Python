@@ -15,7 +15,7 @@
 # for i in price_list:
 #     i = float(i)
 #     s = s + i
-# sum_plus_tax = round(s + s * tax, 2)
+# sum_plus_tax = round(s + s * TAX, 2)
 # have_discount = input(f"You need to pay {sum_plus_tax} including 6.5% tax. Do you have discount? yes/no ")
 # while have_discount.lower() != 'yes' and have_discount.lower() != 'no':
 #     have_discount = input("Sorry, I didn't understand. Do you have discount? yes/no ")
@@ -51,7 +51,7 @@
 # basket = []
 # DELETION_REQUEST = 5
 # i = 0
-# while i<= deletion_request:
+# while i<= DELETION_REQUEST:
 #     i = i + 1
 #     del_element = int(input(
 #         "Which product have you already purchased? "))
@@ -72,19 +72,19 @@
 # Напишіть програму Банкомат. Втсановіть пін код для користувача(зробимо це константою).
 # Запитайте в користувача Пін якщо він введе три рази не вірно то напишіть що карта заблокована.
 # Використовуйте цикл while.
-# REAL_PIN = 1111
-# i = 0
-# pin = int(input("Enter your PIN: "))
-# while pin != real_pin:
-#     i += 1
-#     if pin != real_pin:
-#         if i != 3:
-#             pin = int(input(f"Invalid PIN. You have {3 - i} attempts left. Enter your PIN: "))
-#         else:
-#             print("You have been blocked!")
-#             break
-# else:
-#     print("Success! You are logged in")
+REAL_PIN = 1111
+i = 0
+pin = int(input("Enter your PIN: "))
+while pin != REAL_PIN:
+    i += 1
+    if pin != REAL_PIN:
+        if i != 3:
+            pin = int(input(f"Invalid PIN. You have {3 - i} attempts left. Enter your PIN: "))
+        else:
+            print("You have been blocked!")
+            break
+else:
+    print("Success! You are logged in")
 
 # Задача 4
 # Напишіть за допомогою f-string та format. Дві стрічки де буде підставлятись імя та вік з зміних
