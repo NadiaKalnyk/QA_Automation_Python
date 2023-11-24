@@ -19,25 +19,23 @@
 # have_discount = input(f"You need to pay {sum_plus_tax} including 6.5% tax. Do you have discount? yes/no ")
 # while have_discount.lower() != 'yes' and have_discount.lower() != 'no':
 #     have_discount = input("Sorry, I didn't understand. Do you have discount? yes/no ")
-# else:
-#     if have_discount.lower() == 'yes':
-#         my_discount = input("Is your discount amount or percentage? amount/per ")
-#         while my_discount.lower() != 'amount' and my_discount.lower() != 'per':
-#             my_discount = input("Sorry, I didn't understand. Is your discount amount or percentage? amount/per ")
+# if have_discount.lower() == 'yes':
+#     my_discount = input("Is your discount amount or percentage? amount/per ")
+#     while my_discount.lower() != 'amount' and my_discount.lower() != 'per':
+#         my_discount = input("Sorry, I didn't understand. Is your discount amount or percentage? amount/per ")
+#     if my_discount.lower() == 'amount':
+#         amount = int(input("Enter your discount amount "))
+#         result = sum_plus_tax - amount
+#         if result >= 0:
+#             print(f"Your pay including {amount} discount is {result} UAH")
 #         else:
-#             if my_discount.lower() == 'amount':
-#                 amount = int(input("Enter your discount amount "))
-#                 result = sum_plus_tax - amount
-#                 if result >= 0:
-#                     print(f"Your pay including {amount} discount is {result} UAH")
-#                 else:
-#                     print(f"Your pay including discount is 0 UAH. Balance on the discount is {result*(-1)} UAH")
-#             else:
-#                 (percentage) = int(input("Enter your discount percentage "))
-#                 per = round(sum_plus_tax * percentage/100, 2)
-#                 print(f"Your pay including {percentage}% discount is {sum_plus_tax - per} UAH")
+#             print(f"Your pay including discount is 0 UAH. Balance on the discount is {result*(-1)} UAH")
 #     else:
-#         print(f"{sum_plus_tax} UAH please")
+#         percentage = int(input("Enter your discount percentage "))
+#         per = round(sum_plus_tax * percentage/100, 2)
+#         print(f"Your pay including {percentage}% discount is {sum_plus_tax - per} UAH")
+# else:
+#     print(f"{sum_plus_tax} UAH please")
 
 # Задача 2
 # Переробіть задачу з попереднього уроку враховуючи ваші знання з цього уроку, використайте цикл for in або while.
@@ -63,8 +61,7 @@
 #         print(product_list)
 #     else:
 #         print(f"Wrong number. There is no product with {del_element} in the list {product_list}")
-# else:
-#     print(f"You have already bought {basket}. There are {len(basket)} products in the basket")
+# print(f"You have already bought {basket}. There are {len(basket)} products in the basket")
 # import copy
 # product_list_2 = copy.deepcopy(product_list)
 # add_product = input("Which product do you want to add to your purchase? ")
@@ -82,17 +79,16 @@
 #     i += 1
 #     if pin != real_pin:
 #         if i != 3:
-#             pin = int(input(f"Invalid PIN. You have {3 - i} attempts left."))
+#             pin = int(input(f"Invalid PIN. You have {3 - i} attempts left. Enter your PIN: "))
 #         else:
 #             print("You have been blocked!")
-#     else:
-#         print("Success! You are logged in")
+#             break
 # else:
 #     print("Success! You are logged in")
 
 # Задача 4
 # Напишіть за допомогою f-string та format. Дві стрічки де буде підставлятись імя та вік з зміних
-# name = "оЛенА"
+# name = "оLеnА"
 # age = 21
 # f_string = тут ваш код формата ф-стрінг. | повино вийти -> Я Олена, мені 21 рік
 # format_string = тут ваш код формата формат стрінг | повино вийти -> Я Олена, мені 21 рік
