@@ -11,7 +11,7 @@
 # print("Write price for each product")
 # price_list = input().split()
 # s = 0
-# tax = 0.065
+# TAX = 0.065
 # for i in price_list:
 #     i = float(i)
 #     s = s + i
@@ -49,7 +49,7 @@
 # product_list = input().split()
 # print(f"You have entered products for your purchase: {product_list}")
 # basket = []
-# deletion_request = 5
+# DELETION_REQUEST = 5
 # i = 0
 # while i<= deletion_request:
 #     i = i + 1
@@ -72,7 +72,7 @@
 # Напишіть програму Банкомат. Втсановіть пін код для користувача(зробимо це константою).
 # Запитайте в користувача Пін якщо він введе три рази не вірно то напишіть що карта заблокована.
 # Використовуйте цикл while.
-# real_pin = 1111
+# REAL_PIN = 1111
 # i = 0
 # pin = int(input("Enter your PIN: "))
 # while pin != real_pin:
