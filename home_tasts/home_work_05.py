@@ -3,15 +3,15 @@
 # Коли ви підготуєте це, запитайте в користувача яку табличку він хоче побачити (додавання, віднімання, множення, ділення)
 # і виведіть йому цю табличку.
 operation = input("Which table (+, -, /, *) do you want to see? ")
-while operation != '*' and operation != '/' and operation != '+' and operation != '-':
+while operation not in ('*', '+', '-', '/'):
     operation = input("Wrong operation. Please, select: +, -, /, * ")
-if operation == '*' or operation == '/' or operation == '+' or operation == '-':
+if operation in ('*', '+', '-', '/'):
     for i in range(2, 10):
         for j in range(2, 10):
-            dict_multiplication = {i: j, '=': i * j}
+            dict_multiplication = {i: ['*', j], '=': i * j}
             dict_division = {i * j: i, '=': j}
-            dict_addition = {i: j, '=': i + j}
-            dict_subtraction = {i + j: i, '=': j}
+            dict_addition = {i: ['+', j], '=': i + j}
+            dict_subtraction = {i + j: ['-', j], '=': j}
             if operation == '*':
                 print(dict_multiplication)
             elif operation == '/':
