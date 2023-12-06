@@ -57,18 +57,33 @@
 # Потім запитує це стр чи інт і в залежності від відповіді конкатенує їх або додає і повертає результат перемножений
 # на три. Якщо після конкатенації отримали 10 то перемноживши на 3 отримаємо 30.
 
-first_number = 2
-second_number = 3
-number_type = 'STR'
+# first_number = 2
+# second_number = 3
+# number_type = 'STR'
+#
+# def select_operation(message : str):
+#     if message == True:
+#         if number_type.lower() == "str":
+#             message = f"String concatenation ->  {first_number+second_number}"
+#         elif number_type.lower() == "int":
+#             message = f"Arithmetic operation ->  {(first_number+second_number)*3}"
+#         else:
+#             message = f"Wrong input type. Please, select 'str' or 'int'"
+#     return message
+# result = select_operation(True)
+# print(result)
 
-def select_operation(message : str):
-    if message == True:
-        if number_type.lower() == "str":
-            message = f"String concatenation ->  {first_number+second_number}"
-        elif number_type.lower() == "int":
-            message = f"Arithmetic operation ->  {(first_number+second_number)*3}"
-        else:
-            message = f"Wrong input type. Please, select 'str' or 'int'"
+# інший варіант розв'язання Задачі 3 (2)
+def select_operation(first_number: str|int, second_number: str|int) -> str:
+    if isinstance(first_number, str) and (second_number, str):
+        message = f"String concatenation ->  {first_number+second_number}"
+    elif isinstance(first_number, int) and (second_number, int):
+        message = f"Arithmetic operation ->  {(first_number+second_number)*3}"
+    else:
+        message = f"Wrong input type. Please, select 'str' or 'int'"
     return message
-result = select_operation(True)
+
+result = select_operation(2, 3)
+result2 = select_operation("2", "3")
 print(result)
+print(result2)
