@@ -14,10 +14,7 @@ list_2 = ['lorem', 'ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'print
 
 
 def sorting_by_abc(list_3: list) -> list:
-    import copy
-    list_3 = copy.deepcopy(list_2)
-    if list_2 != []:
-        list_3.sort()
+    list_3.sort()
     return list_3
 
 
@@ -39,6 +36,6 @@ def descending(sort: list) -> list:
 ascending_sorting = ascending(sort=list_1)
 descending_sorting = descending(sort=list_1)
 sorting_by_letters_in_words = sorting_by_letters(sort=list_2)
-print(ascending_sorting)
-print(descending_sorting)
-print(sorting_by_letters_in_words)
+# print(ascending_sorting)
+# print(descending_sorting)
+# print(sorting_by_letters_in_words)
