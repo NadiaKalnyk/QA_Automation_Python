@@ -22,6 +22,7 @@ def add_three_numbers(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> int|
     return result
 
 # 4) перепишіть декоратор який заміряє час з уроку в домашку, можете його поклацати, як він працює
+import time
 from datetime import datetime
 def func_wrapper_time(func):
     def wrapper(*arg, **kwargs):
@@ -33,7 +34,6 @@ def func_wrapper_time(func):
         result
     return  wrapper
 
-import time
 @func_wrapper_time
 def foo_1(*args, **kwargs):
     print("foo_1")
