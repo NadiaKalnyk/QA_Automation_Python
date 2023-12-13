@@ -38,13 +38,13 @@
 #     return number * my_factorial(number - 1)
 # print(my_factorial(5))
 
-import functools
-@functools.lru_cache()  # Зберігає попередні обрахунки і їх не потрібно ще раз обраховувати.
-def fib_rec(number: int) -> int:
-    if number in (1, 2):
-        return 1
-    return fib_rec(number -1) + fib_rec(number -2)
-print(fib_rec(145))
+# import functools
+# @functools.lru_cache()  # Зберігає попередні обрахунки і їх не потрібно ще раз обраховувати.
+# def fib_rec(number: int) -> int:
+#     if number in (1, 2):
+#         return 1
+#     return fib_rec(number -1) + fib_rec(number -2)
+# print(fib_rec(145))
 
 # дз яке не оцінюється вирішити це завжання без рекурсії і сторініх бібліотек
 # ВИПАДОК ДЕ РЕКУРСІЯ ТРЕБА
