@@ -32,7 +32,7 @@ def foo_1(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
     list_1.append(n_2)
     list_1.append(n_3)
     list_1.append(result)
-    return result
+    return list_1
 
 data = foo_1(1, 2, 3)
 
