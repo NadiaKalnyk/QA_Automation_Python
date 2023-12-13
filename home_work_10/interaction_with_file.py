@@ -13,7 +13,7 @@
 # Home_wokr_9 -> task_3:
 # зробіть функцію як ми робили з додаванням тільки замість двох чисел зробіть три числа і
 # протестуйте її всіма трьома методами
-
+import random
 list_1 =[]
 def func_wrapper_sum(func):
     def wrapper(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
@@ -33,10 +33,10 @@ def foo_1(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
     list_1.append(result)
     return list_1
 
-foo_1(5, 2, 3)
+foo_1(random.random().__round__(2), random.random().__round__(2), random.random().__round__(2))
 
 with open("log.txt", "a") as file:
-    file.write(f'You added numbers: {list_1[0]}, {list_1[1]}, {list_1[2]}. ')
-    file.write(f' Their sum = {list_1[-1]}.   ')
+    file.write(f'You numbers: {list_1[0]}, {list_1[1]}, {list_1[2]}. ')
+    file.write(f' Their sum = {round(list_1[-1], 2)}.   ')
 
 
