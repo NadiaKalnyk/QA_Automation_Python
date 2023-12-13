@@ -14,7 +14,10 @@
 # зробіть функцію як ми робили з додаванням тільки замість двох чисел зробіть три числа і
 # протестуйте її всіма трьома методами
 import random
+import functools
+
 list_1 =[]
+@functools.lru_cache()
 def func_wrapper_sum(func):
     def wrapper(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
         result = n_1 + n_2 + n_3
