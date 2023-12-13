@@ -15,19 +15,29 @@
 # протестуйте її всіма трьома методами
 
 def func_wrapper_sum(func):
-    def wrapper(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> int|float:
+    def wrapper(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
+        list_1 =[]
         result = n_1 + n_2 + n_3
-        return n_1, n_2, n_3, result
+        list_1.append(n_1)
+        list_1.append(n_2)
+        list_1.append(n_3)
+        list_1.append(result)
+        return list_1
     return wrapper
 @func_wrapper_sum
-def foo_1(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> int|float:
+def foo_1(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
+    list_1 = []
     result = n_1 + n_2 + n_3
+    list_1.append(n_1)
+    list_1.append(n_2)
+    list_1.append(n_3)
+    list_1.append(result)
     return result
 
-all_positive = foo_1(-1, 2, 3)
+data = foo_1(1, 2, 3)
 
 with open("log.txt", "a") as file:
-    file.write(f'You added numbers: {all_positive[0]}, {all_positive[1]}, {all_positive[2]}. ')
-    file.write(f' Their sum = {all_positive[-1]}.   ')
+    file.write(f'You added numbers: {data[0]}, {data[1]}, {data[2]}. ')
+    file.write(f' Their sum = {data[-1]}.   ')
 
 
