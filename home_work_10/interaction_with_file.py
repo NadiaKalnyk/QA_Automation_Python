@@ -13,33 +13,18 @@
 # Home_wokr_9 -> task_3:
 # зробіть функцію як ми робили з додаванням тільки замість двох чисел зробіть три числа і
 # протестуйте її всіма трьома методами
-import random
-import functools
-
-list_1 =[]
-@functools.lru_cache()
 def func_wrapper_sum(func):
-    def wrapper(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
-        result = n_1 + n_2 + n_3
-        list_1.append(n_1)
-        list_1.append(n_2)
-        list_1.append(n_3)
-        list_1.append(result)
-        return list_1
-    return wrapper
+    def write_file(n_1: int | float, n_2: int | float, n_3: int | float) -> None:
+        with open("log.txt", "a") as file:
+            result = func(n_1, n_2, n_3)
+            file.write(f'You numbers: {n_1}, {n_2}, {n_3}.  ')
+            file.write(f' Their sum = {result}')
+            return result
+    return write_file
 @func_wrapper_sum
-def foo_1(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> list:
+def add_three_numbers(n_1 : int|float, n_2 : int|float, n_3 : int|float) -> int|float:
     result = n_1 + n_2 + n_3
-    list_1.append(n_1)
-    list_1.append(n_2)
-    list_1.append(n_3)
-    list_1.append(result)
-    return list_1
-
-foo_1(random.random().__round__(2), random.random().__round__(2), random.random().__round__(2))
-
-with open("log.txt", "a") as file:
-    file.write(f'You numbers: {list_1[0]}, {list_1[1]}, {list_1[2]}. ')
-    file.write(f' Their sum = {round(list_1[-1], 2)}.   ')
+    return result
+add_three_numbers(1, 2, 3)
 
 
