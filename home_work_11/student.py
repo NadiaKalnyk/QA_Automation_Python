@@ -19,17 +19,18 @@ class Student:
             raise Warning("4 exams")
         else:
             for index, value in enumerate(self.ratings_list):
-                if value == 5 not in (1, 2, 3, 4):
-                    print(f"My rainting is {self.ratings_list}. I got Excelent!")
+                if value == 5:
+                    print(f"My rainting is {self.ratings_list}. Excelent!")
                 elif value <= 3 and value not in (4, 5):
-                    print(f"My rainting is {self.ratings_list}. I got Satisfaction!")
-                elif value in (4,5):
-                    print(f'My rainting is {self.ratings_list}. I got Good!')
+                    print(f"My rainting is {self.ratings_list}. Satisfaction!")
+                elif value in (4, 5):
+                    print(f'My rainting is {self.ratings_list}. Good!')
                 else:
                     print(
                         f"My raitings is {self.ratings_list}. I passed only {len(self.ratings_list)} exams and failed the session!")
-
-
+#
+#
+#
 student_1 = Student()
 student_1.say_hello()
 student_1.ratings_list = [5, 5, 5, 4]
@@ -46,11 +47,11 @@ student_1.check_ratings()
 #  додайте скірншоти виконання(не забудьте додавати -v, що б я бачив що ви проганяли) і біля скріншотів пропишіть команди
 #  які ви використовували.
 
-# a = [2,3,4]
-# for index, value in enumerate(a):
-#     my_list = []
-#     my_list = my_list.extend(value)
-#     print(my_list)
+a = [2,3,4]
+for index, value in enumerate(a):
+    print(index)
+    print(value)
+
 
 # >>> def even_items(iterable):
 # ...     """Return items from ``iterable`` when their index is even."""
