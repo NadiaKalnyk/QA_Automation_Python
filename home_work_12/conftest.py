@@ -8,6 +8,7 @@ def fixture_random(request):
     request.cls.response = response
     yield response
 
+
 @pytest.fixture(scope="class")
 def fixture_query(request):
     query = " oil "
