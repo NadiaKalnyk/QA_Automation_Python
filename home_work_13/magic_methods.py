@@ -12,7 +12,10 @@ class Student:
         self.name = name
 
     def __ne__(self, other):
-        return self.name != other.name
+        if isinstance(other, Student):
+            return self.name != other.name
+        else:
+            return False
 
     def __lt__(self, other):
         if isinstance(other, Student):
@@ -21,7 +24,22 @@ class Student:
             return False
 
     def __le__(self, other):
-        return self == other or self < other
+        if isinstance(other, Student):
+            return self == other or self < other
+        else:
+            return False
+
+    def __gt__(self, other):
+        if isinstance(other, Student):
+            return len(self.name) > len(other.name)
+        else:
+            return False
+
+    def __ge__(self, other):
+        if isinstance(other, Student):
+            return self == other or self > other
+        else:
+            return False
 
 
 student_1 = Student("Ivan")
@@ -35,3 +53,11 @@ print(f"{student_1 < student_2} \n {len(student_1.name)} is less than {len(stude
 print("****************** Testing metod __le__ *************************")
 print(f"{student_1 == student_2 or student_1 < student_2} \n "
       f"{len(student_1.name)} is less than or equal than {len(student_2.name)} \n")
+
+print("****************** Testing metod __gt__ *************************")
+print(f"{student_2 > student_1} \n "
+      f"{len(student_2.name)} is greater than {len(student_1.name)} \n")
+
+print("****************** Testing metod __ge__ *************************")
+print(f"{student_1 == student_2 or student_2 > student_1} \n "
+      f"{len(student_2.name)} is greater than or equal {len(student_1.name)} \n")
