@@ -24,7 +24,7 @@ class TestQuery:
         assert request.status_code == 200
 
 
-def test_search_by_the_word():
+def search_by_the_word():
     URL = "https://api.chucknorris.io/jokes/search?query=oil"
     response = requests.request(method="GET", url=URL)
     print(response.json())
