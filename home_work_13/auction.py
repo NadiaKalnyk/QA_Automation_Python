@@ -11,6 +11,7 @@ class Auction:
                 return f"{person_2.name} donat more than {person_1.name}"
         raise TypeError
 
+
 person_1 = Auction("Ivan", 5000)
 person_2 = Auction("Luka", 800)
 print(person_1 >= person_2)
