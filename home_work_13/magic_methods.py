@@ -51,13 +51,10 @@ print("****************** Testing metod __lt__ *************************")
 print(f"{student_1 < student_2} \n {len(student_1.name)} is less than {len(student_2.name)} \n")
 
 print("****************** Testing metod __le__ *************************")
-print(f"{student_1 == student_2 or student_1 < student_2} \n "
-      f"{len(student_1.name)} is less than or equal than {len(student_2.name)} \n")
+print(f"{student_1 <= student_2} \n {len(student_1.name)} is less than or equal than {len(student_2.name)} \n")
 
 print("****************** Testing metod __gt__ *************************")
-print(f"{student_2 > student_1} \n "
-      f"{len(student_2.name)} is greater than {len(student_1.name)} \n")
+print(f"{student_2 > student_1} \n {len(student_2.name)} is greater than {len(student_1.name)} \n")
 
 print("****************** Testing metod __ge__ *************************")
-print(f"{student_1 == student_2 or student_2 > student_1} \n "
-      f"{len(student_2.name)} is greater than or equal {len(student_1.name)} \n")
+print(f"{student_2 >= student_1} \n {len(student_2.name)} is greater than or equal {len(student_1.name)} \n")
