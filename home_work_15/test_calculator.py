@@ -5,17 +5,16 @@ from datetime import datetime
 
 class TestClass:
     @classmethod
-    def setup_class():
-        start = datetime.now()
-        print("\nWe started test", start)
+    def setup_class(cls):
+        with open("calc_info.txt", "w") as file:
+            start = datetime.now()
+            file.write(f'{str(Calculator().info())} \nWe started test {start}')
 
     @classmethod
-    def teardown_class():
-        with open("calc_info.txt", "w") as file:
-            text = str(Calculator().info())
-            file.write(text)
-        finish = datetime.now()
-        print("\nWe have finished test", finish)
+    def teardown_class(cls):
+        with open("calc_info.txt", "a") as file:
+            finish = datetime.now()
+            file.write(f'\nWe have finished test {finish}')
 
     @pytest.mark.parametrize("number_1, number_2, expected", [
             pytest.param(1, 3, 4, id="1 test"),
