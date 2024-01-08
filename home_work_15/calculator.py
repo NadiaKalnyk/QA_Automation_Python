@@ -23,4 +23,4 @@ class Calculator:
 
     @staticmethod
     def info():
-        print("\n________________ Hello! I'm Calculator ________________")
+        return "________________ Hello! I'm Calculator ________________"

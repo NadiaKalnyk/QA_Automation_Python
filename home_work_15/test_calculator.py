@@ -1,9 +1,22 @@
 import pytest
 from python_course.QA_Automation_Python.home_work_15.calculator import Calculator
+from datetime import datetime
 
 
-@pytest.mark.usefixtures("test_time")
 class TestClass:
+    @classmethod
+    def setup_class():
+        start = datetime.now()
+        print("\nWe started test", start)
+
+    @classmethod
+    def teardown_class():
+        with open("calc_info.txt", "w") as file:
+            text = str(Calculator().info())
+            file.write(text)
+        finish = datetime.now()
+        print("\nWe have finished test", finish)
+
     @pytest.mark.parametrize("number_1, number_2, expected", [
             pytest.param(1, 3, 4, id="1 test"),
             pytest.param(2, 2, 4,  id="2 test"),
