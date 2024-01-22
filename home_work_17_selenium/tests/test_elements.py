@@ -18,5 +18,4 @@ class TestElements:
         page = ElementsPage.ElementsPage(chrome)
         page.open()
         elements = page.get_elements_page_categories()
-        for i in range(0, len(elements), 1):
-            assert elements[і] == element_names
+        assert elements.__contains__(element_names)
