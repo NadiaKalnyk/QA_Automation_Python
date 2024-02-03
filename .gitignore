@@ -159,4 +159,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 /home_work_10/log.txt
+lesson_17_selenium/chromedriver
 chromedriver
+geckodriver
