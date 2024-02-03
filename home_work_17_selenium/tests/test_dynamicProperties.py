@@ -13,3 +13,5 @@ class TestDynamicProperties:
         page = PageDynamicProperties(chrome).open()
         button: WebElement = page.invisible_visible_button()
         button.click()
+
+    # переробили і запустили із waiters у test_waiters.py
