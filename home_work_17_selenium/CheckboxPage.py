@@ -37,10 +37,20 @@ class CheckboxPage:
 
     def mark_folder(self, name):
         versatile_checkbox_button = self.driver.find_element(By.XPATH,
-                                                             f"//label[contains(@for, 'tree-node-{name}')]")
+                                                             f"//label[contains(@for, 'tree-node-{name}')]/span[contains(@class, 'checkbox')]")
         input_field = self.driver.find_element(By.XPATH, f"//label[contains(@for, 'tree-node-{name}')]/input")
         if not input_field.is_selected():
             versatile_checkbox_button.click()
 
+    def unmark_folder(self, name):
+        versatile_checkbox_button = self.driver.find_element(By.XPATH,
+                                                             f"//label[contains(@for, 'tree-node-{name}')]/span[contains(@class, 'checkbox')]")
+        try:
+            input_field = self.driver.find_element(By.XPATH, "//*[contains(@class, 'uncheck')]")
+            if not input_field.is_displayed():
+                input_field.click()
+        except NoSuchElementException:
+            pass
+        versatile_checkbox_button.click()
         # //*[contains(@class, "expand-open")] - відкрито
         # //*[@class="rct-icon rct-icon-expand-close"]

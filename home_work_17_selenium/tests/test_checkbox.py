@@ -11,3 +11,6 @@ class TestCheckboxPage:
         self.page.open()
         self.page.expand_folder("home")
         self.page.mark_folder("home")
+        self.page.collapse_folder("home")
+        self.page.unmark_folder("home")
+        pass
