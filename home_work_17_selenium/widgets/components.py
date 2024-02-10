@@ -29,9 +29,10 @@ class Component:
         self.driver.execute_script("arguments[0].scrollIntoView();", self.element)
 
 
-class Button(Component):
+class Button(Component):  # унаслідувалися від класу Component
     def __init__(self, driver: WebDriver = None, locator: tuple = None):
-        super().__init__(driver=driver, locator=locator)
+        super().__init__(driver=driver,
+                         locator=locator)  # Функція super() використовується для надання доступу до методів і властивостей батьківського або рідного класу.
 
     def hover(self):
         self._actions.move_to_element(self.element).perform()
