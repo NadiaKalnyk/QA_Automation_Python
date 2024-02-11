@@ -8,30 +8,33 @@
 # n. [назва валюти n] to UAH: [значення курсу до валюти n]
 #
 # P.S.не забувайте про DRY(Don't Repeat Yourself), KISS(Keep It Simple, Stupid), перевірки
-import pytest
+import requests
 
 
-@pytest.mark.usefixtures("exchange_rate")
 class NBU:
+    def __init__(self, response=requests.get("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json")):
+        self.response = response
 
     def exchange_date(self):
         return self.response.json()[0]['exchangedate']
 
     def country(self):
-        for key in range(0, len(self.response.json())):
-            return f'{self.response.json()[key]["txt"]}'
+        country_names = [i['txt'] for i in self.response.json()]  # gptChat
+        return country_names
 
     def rate(self):
-        for key in range(0, len(self.response.json())):
-            return f'{self.response.json()[key]["rate"]}'
+        rate_values = [i['rate'] for i in self.response.json()]  # gptChat
+        return rate_values
+
+    def contry_to_UAH_rate(self):
+        result = dict(zip(nbu.country(), nbu.rate()))
+        return result
+
+    def writting_to_file(self):
+        with open("NBU.txt", "w") as file:
+            file.write(f'{nbu.exchange_date()} \n')
+            file.write(f'{nbu.contry_to_UAH_rate()}')
 
 
 nbu = NBU()
-with open("NBU.txt", "a") as file:
-    file.write(f'{nbu.exchange_date()}')
-    # file.write(f'{nbu.country()} to UAH: {nbu.exhange_rate()}')
-
-# def test_er(self):
-#     print(type(self.response.json()[0]))
-#     pass
-# exchangedate
+nbu.writting_to_file()

@@ -57,13 +57,14 @@ calc_dict = {
     "/": lambda a, b: a / b,
     "-": lambda a, b: a - b
 }
+
+
 #
 # print(calc_dict["+"](199, 1))
 # print(calc_dict["*"](4, 3))
-def concatenate(string_a : str, string_b : str) -> str:
+def concatenate(string_a: str, string_b: str) -> str:
     result = string_a + string_b
     return result
-
 
 
 # sorted
@@ -80,7 +81,7 @@ def concatenate(string_a : str, string_b : str) -> str:
 # a, b, *c = [2, 3, 4, 4, 5, 6]
 # print(a, b, c)
 
-def foo(*args) ->int|float:
+def foo(*args) -> int | float:
     age, height, *list_2 = args
     if list_2 != []:
         for i in list_2:
@@ -89,8 +90,8 @@ def foo(*args) ->int|float:
     print(age, height)
     return "sum(list_1)"
 
-print(foo(34, 43))
 
+print(foo(34, 43))
 
 
 def foo2(*args, **kwargs):
@@ -99,16 +100,15 @@ def foo2(*args, **kwargs):
     print(dict_1)
     print(grades_list)
 
+
 foo2(33, 200, 90, a=22, b=77, c=45)
-dict_a = {33:32}
-dict_b = {30:100}
+dict_a = {33: 32}
+dict_b = {30: 100}
 
 dict_c = {**dict_a, **dict_b}
 print(dict_c)
 
-
 # import
-
 
 
 # Постмен-> requests
@@ -123,15 +123,12 @@ print(dict_c)
 # Selenium, requests, python, postman, API, pytest, - додати в лінкедін і підтвердити навички
 
 
-
-
-
 # ascii (укрстрінг), ord VS chr
-print(ascii("c"))  # eng c
-print(ascii("с"))  # укр c
-
-print(ord("F"))  # 70
-print(ord("f"))  # 102
-
-print(chr(102))  # f
-print(chr(72))  # H
+# print(ascii("c"))  # eng c
+# print(ascii("с"))  # укр c
+#
+# print(ord("F"))  # 70
+# print(ord("f"))  # 102
+#
+# print(chr(102))  # f
+# print(chr(72))  # H
