@@ -43,6 +43,9 @@ class Button(Component):  # унаслідувалися від класу Compo
     def doubleclick(self):
         self._actions.double_click(self.element).perform()
 
+    def right_click(self):
+        self._actions.context_click(self.element).perform()
+
     def get_attribute(self, attr):
         return self.element.get_attribute(attr)
 
