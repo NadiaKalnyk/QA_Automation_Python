@@ -27,11 +27,19 @@ class NBU:
         return rate_values
 
     def contry_to_UAH_rate(self):
+        new_list = []
         result_dict = dict(zip(self.country(), self.rate()))
         for key, value in result_dict.items():
-            country_and_rate = f'{key} to UAH: {value}'
-            return country_and_rate  # вивід у консоль правильний, якщо змінити print на return -> у файл записує лише перше значення + текст не виводить
+            info_rate = f'{key} to UAH: {value}\n'
+            new_list.append(info_rate)
+        return new_list
 
     def writting_to_file(self):
         with open("NBU.txt", "w") as file:
-            file.write(f'{self.exchange_date()} \n{self.contry_to_UAH_rate()}')
+            file.write(f'{self.exchange_date()} \n')
+            for rate_info in self.contry_to_UAH_rate():
+                file.write(f"{rate_info}")
+
+
+nbu = NBU()
+nbu.writting_to_file()
