@@ -1,6 +1,6 @@
 # Підключіться до API НБУ ( документація тут https://bank.gov.ua/ua/open-data/api-dev ),
 # отримайте курс валют і запишіть його в текстовий файл такому форматі (список):
-
+#
 # "[дата створення запиту]"
 # 1. [назва валюти 1] to UAH: [значення курсу до валюти 1]
 # 2. [назва валюти 2] to UAH: [значення курсу до валюти 2]
@@ -27,13 +27,16 @@ class NBU:
         return rate_values
 
     def contry_to_UAH_rate(self):
-        result = dict(zip(nbu.country(), nbu.rate()))
-        return result
+        result_dict = dict(zip(nbu.country(), nbu.rate()))
+        for key, value in result_dict.items():
+            info_rate = f'{key} to UAH: {value}'
+            print(
+                info_rate)  # вивід у консоль правильний, якщо змінити print на return -> у файл записує лише перше значення + текст не виводить
 
     def writting_to_file(self):
         with open("NBU.txt", "w") as file:
             file.write(f'{nbu.exchange_date()} \n')
-            file.write(f'{nbu.contry_to_UAH_rate()}')
+            file.write(f"{nbu.contry_to_UAH_rate()} \n")
 
 
 nbu = NBU()
