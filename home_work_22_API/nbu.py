@@ -32,7 +32,8 @@ class NBU:
         for key, value in result_dict.items():
             info_rate = f'{key} to UAH: {value}'
             new_list.append(info_rate)
-        return "\n".join(new_list)
+        return "\n".join(
+            new_list)  # об'єднує кожен елемент списку у рядок, розділений "\n", і потім цей рядок друкується стовпцем
 
     def writing_to_file(self):
         with open("NBU.txt", "w") as file:
