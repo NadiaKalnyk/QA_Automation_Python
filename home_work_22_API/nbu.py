@@ -30,15 +30,14 @@ class NBU:
         new_list = []
         result_dict = dict(zip(self.country(), self.rate()))
         for key, value in result_dict.items():
-            info_rate = f'{key} to UAH: {value}\n'
+            info_rate = f'{key} to UAH: {value}'
             new_list.append(info_rate)
-        return new_list
+        return "\n".join(new_list)
 
-    def writting_to_file(self):
+    def writing_to_file(self):
         with open("NBU.txt", "w") as file:
             file.write(f'{self.exchange_date()} \n')
-            for rate_info in self.contry_to_UAH_rate():
-                file.write(f"{rate_info}")
+            file.write(f"{self.contry_to_UAH_rate()}")
 
 
 nbu = NBU()
