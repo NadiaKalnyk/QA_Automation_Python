@@ -1,6 +1,5 @@
 import pytest
 from QA_Automation_Python.home_work_17_selenium.CheckboxPage import CheckboxPage
-import time
 
 
 @pytest.mark.usefixtures("chrome_class")
