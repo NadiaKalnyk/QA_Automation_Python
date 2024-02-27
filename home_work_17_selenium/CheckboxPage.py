@@ -17,7 +17,7 @@ class CheckboxPage:
         versatile_checkbox_button = self.driver.find_element(By.XPATH,
                                                              f"//label[contains(@for, 'tree-node-{name}')]//ancestor::span/button")
         try:
-            expand = versatile_checkbox_button.find_element(By.XPATH, "//*[contains(@class, 'expand-open')]")
+            expand = versatile_checkbox_button.find_element(By.XPATH, "//li[contains(@class, 'rct-node-collapsed')]")
             if expand.is_displayed():
                 expand.click()
         except NoSuchElementException:
@@ -28,7 +28,7 @@ class CheckboxPage:
         versatile_checkbox_button = self.driver.find_element(By.XPATH,
                                                              f"//label[contains(@for, 'tree-node-{name}')]//ancestor::span/button")
         try:
-            expand = versatile_checkbox_button.find_element(By.XPATH, "//*[contains(@class, 'expand-close')]")
+            expand = versatile_checkbox_button.find_element(By.XPATH, "//li[contains(@class, 'rct-node-expanded')]")
             if expand.is_displayed():
                 expand.click()
         except NoSuchElementException:
@@ -52,5 +52,15 @@ class CheckboxPage:
         except NoSuchElementException:
             pass
         versatile_checkbox_button.click()
+
+    def get_text_results(self):
+        list_message = []
+        messages = [message.text for message in self.driver.find_elements(By.XPATH, "//span[@class='text-success']")]
+        list_message.extend(messages)  # Додаємо всі текстові повідомлення до списку
+        return list_message
+
+    def scroll_down(self) -> None:
+        self.driver.execute_script("window.scrollBy(0, 200);")
+
         # //*[contains(@class, "expand-open")] - відкрито
         # //*[@class="rct-icon rct-icon-expand-close"]
