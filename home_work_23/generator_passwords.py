@@ -11,7 +11,7 @@ def generate_password(length, use_digits=True, use_lowercase=True, use_uppercase
     if use_uppercase:
         characters += string.ascii_uppercase
     if use_cyrillic:
-        characters += 'qwertyuiopasdfghjklzxcvbnm'
+        characters += 'йцукенгшщзхїєждлорпавіфячсмитьбю'
 
     password = ''.join(random.choice(characters) for i in range(length))
     return password
