@@ -1,23 +1,17 @@
-from time import sleep
-
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class RozetkaParser:
     def __init__(self):
-        def __init__(self):
-            self.driver = webdriver.Chrome(
-                "C:/Users/admin/PycharmProjects/python_course/QA_Automation_Python/home_work_17_selenium/chromedriver")
+        self.driver = webdriver.Chrome(
+            "C:/Users/admin/PycharmProjects/python_course/QA_Automation_Python/home_work_17_selenium/chromedriver")
 
     def parse_page(self, url, filename):
         self.driver.get(url)
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.goods-tile")))
         self.extract_and_write_to_file(filename)
         self.navigate_to_next_page()
-        sleep(3)
         self.extract_and_write_to_file(filename)
 
     def extract_and_write_to_file(self, filename):
