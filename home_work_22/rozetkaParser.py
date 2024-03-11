@@ -1,13 +1,12 @@
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
 
 class RozetkaParser:
     def __init__(self):
         self.driver = webdriver.Chrome(
-            "C:/Users/admin/PycharmProjects/python_course/QA_Automation_Python/home_work_17_selenium/chromedriver")
+            executable_path="C:/Users/admin/PycharmProjects/python_course/QA_Automation_Python/home_work_17_selenium/chromedriver")
 
     def parse_page(self, url, filename):
         self.driver.get(url)
