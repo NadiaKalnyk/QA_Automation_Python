@@ -5,7 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class RozetkaParser:
-    def __init__(self):
+    def __init__(self, driver):
         self.driver = webdriver.Chrome(
             "C:/Users/admin/PycharmProjects/python_course/QA_Automation_Python/home_work_17_selenium/chromedriver")
 
@@ -34,6 +34,6 @@ class RozetkaParser:
         self.driver.quit()
 
 
-parser = RozetkaParser()
+parser = RozetkaParser(webdriver)
 parser.parse_page('https://rozetka.com.ua/ua/mobile-phones/c80003/', 'rozetka_ads.txt')
 parser.close()
