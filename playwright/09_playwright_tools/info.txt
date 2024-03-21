@@ -1,0 +1,2 @@
+# playwright codegen <webURL> -enter this in the terminal 'playwright codegen playwright.dev'
+# -> playwright inspector opens and using it can find selectors + code writes
