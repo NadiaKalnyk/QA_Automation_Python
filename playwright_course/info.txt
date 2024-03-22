@@ -1,0 +1,16 @@
+pip install --upgrade playwright
+playwright install - for upgrading browsers after upgrading playwright
+npx playwright install - downloading webdrivers?
+
+python -m playwright codegen https://lms.ithillel.ua/auth - відкриття плейврайт у режимі запису
+https://playwright.dev/python/docs/intro - info site
+
+# playwright codegen <webURL> -enter this in the terminal 'playwright codegen playwright.dev'
+# -> playwright inspector opens and using it can find selectors + code writes  - відкриття плейврайт у режимі запису2
+
+# pytest --numprocesses auto
+# 1. --numprocesses: цей параметр визначає кількість робочих процесів для паралельного виконання тесту.
+# 2. auto: це значення вказує pytest автоматично визначати кількість робочих процесів
+
+# pytest --n 3
+# pytest виконуватиме тести паралельно, використовуючи 3 робочі процеси
